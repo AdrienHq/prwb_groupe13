@@ -1,36 +1,39 @@
-
-<nav>
-    <div>
-        <ul>
-            <li><a href="login/index">Accueil</a></li>
-            <li><a href="produit/produits">Produits</a></li>
-            <li class="dropdown">
-                <a href="produit/produits" class="dropbtn">Catégories</a>
-                <?php
-                    echo '<div class="dropdown-content">';
-                    $categories = Categorie::select_all_categories();
-                    foreach ($categories as $cat) {
-                        echo '<a href="produit/produits?cat='.$cat->titre.'">'.$cat->titre.'</a>';
-                    }
-                    echo '</div>';
-                ?>
-            </li>
-            <?php if (isset($_SESSION['user']) && Utilisateur::is_admin($_SESSION['user'])) { echo "<li><a href="."admin/index"." class="."navbar-brand".">Admin</a></li>" ; }?>
-            <?php if (isset($_SESSION['user'])) { echo "<li><a href="."login/index"." class="."navbar-brand".">Profil</a>" ; }?>
-            <?php if (!isset($_SESSION['user'])) { echo "<li><a href="."login/login"." class="."navbar-brand".">Se connecter</a></li>" ; }?>
-            <?php if (!isset($_SESSION['user'])) { echo "<li><a href="."login/signup"." class="."navbar-brand".">S'enregistrer</a></li>" ; }?>
-            <?php if (isset($_SESSION['user'])) { echo "<li><a href="."login/logout"." class="."navbar-brand".">Déconnexion</a></li>" ; }?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gimme</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="login/index">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="produit/produits">Produits</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Catégories
+                    </a>
+                    <?php
+                        echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdown">';
+                        $categories = Categorie::select_all_categories();
+                        foreach ($categories as $cat) {
+                            echo '<li><a class="dropdown-item" href="produit/produits?cat='.$cat->titre.'">'.$cat->titre.'</a></li>';
+                        }
+                        echo '</ul>';
+                    ?>
+                </li>
         </ul>
-        <script>
-            function myFunction() {
-                document.getElementsByClassName("menu")[0].classList.toggle("responsive");
-            }
-        </script>
+        <ul class="nav navbar-nav navbar-right">
+            <?php if (isset($_SESSION['user']) && Utilisateur::is_admin($_SESSION['user'])) { echo '<li><a href="admin/index" class="nav-link navbar-right">Admin</a></li>' ; }?>
+            <?php if (isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/index" class="nav-link">Profil</a></li>' ; }?>
+            <?php if (!isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/login" class="nav-link">Se connecter</a></li>' ; }?>
+            <?php if (!isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/signup" class="nav-link">Enregistrement</a></li>' ; }?>
+            <?php if (isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/logout" class="nav-link">Déconnexion</a></li>' ; }?>
+            <?php if (isset($_SESSION['user'])){
+            echo "<div id=\"cart_logo\">\n";
+            echo "    <a href=\"login/panier\"><img src=\"img/shopping_cart_logo.png\" alt=\"img\" height=\"30\" width=\"30\"></a>\n";
+            echo "    <div id=\"valueCart\"></div>\n";
+            echo "</div>\n";
+            }?>
+        </ul>
     </div>
 </nav>
-<?php if (isset($_SESSION['user'])){
-echo "<div id=\"cart_logo\">\n"; 
-echo "    <a href=\"login/panier\"><img src=\"img/shopping_cart_logo.png\" alt=\"img\" height=\"30\" width=\"30\"></a>\n"; 
-echo "    <div id=\"valueCart\"></div>\n"; 
-echo "</div>\n";
-}?>
