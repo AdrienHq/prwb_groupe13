@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteBase /prwb_groupe13/
+#RewriteRule ^([\w]*)/?([\w]*)?/?([\w]*)?/?$ index.php?controller=$1&action=$2&id=$3 [NC,L]
+RewriteRule ^([\w]*)/?([\w]*)?/?([\w]*)?/?([\w]*)?/?$ index.php?controller=$1&action=$2&id=$3&param=$4 [NC,L,QSA]
