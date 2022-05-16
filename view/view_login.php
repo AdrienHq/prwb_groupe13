@@ -10,23 +10,15 @@
                 }
             </script>
         </div>
-        <div class="main">
-            <form action="login/login" method="post">
-                <table>
-                    <tr>
-                        <td>Pseudo:</td>
-                        <td><input id="pseudo" name="pseudo" type="text" value=""></td>
-                    </tr>
-                    <tr>
-                        <td>Mot de Passe:</td>
-                        <td><input id="password" name="password" type="password" value=""></td>
-                    </tr>
-                </table>
-                <input type="submit" value="Connexion">
-            </form>
-            <?php if($error): ?>
-                <div class='errors'><br><br><?= $error ?></div>
-            <?php endif; ?>
+        <div class="container">
+            <div class="row" style="padding-top: 50px  text-align: center">
+                <div class="col-sm-4 mx-auto" style="text-align: center">
+                    <?php require_once("view/blocks/form_login.html"); ?>
+                    <?php if($error): ?>
+                        <div class='errors'><br><br><?= $error ?></div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </body>
 </html>
