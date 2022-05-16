@@ -12,7 +12,6 @@
         <script src="lib/Jquery/jquery-ui-1.11.4/external/jquery/jquery.js" type="text/javascript"></script>
         <script src="lib/Jquery/jquery-ui-1.11.4/jquery-ui.js" type="text/javascript"></script>
         <script src="lib/Jquery/jquery-validation-1.14.0/jquery.validate.js" type="text/javascript"></script>
-        
         <script>
             $.validator.addMethod("regex", function (value, element, pattern) {
                 if (pattern instanceof Array) {
@@ -144,8 +143,6 @@
                 $("input:text:first").focus();
             });
         </script>
-        
-
     </head>
     <body>
         

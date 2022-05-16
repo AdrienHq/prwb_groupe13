@@ -12,7 +12,7 @@ class ControllerLogin extends Controller {
         if ($this->user_logged()) {
             $u = Utilisateur::select_user($_SESSION['user']);
             $u->password = "********";
-            (new View("base"))->show();
+            (new View("index"))->show();
         } else {
             $this->redirect("login", "login");
         }

@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Bienvenue sur Projet13</title>
-        <base href="<?= $web_root ?>"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/style1.css">
-        <script type="text/javascript" src="js/panier.js"></script>
-    </head>
+    <?php require_once("view/blocks/head.html"); ?>
     <body>
         
         <?php require_once("view_navbar.html"); ?>

@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Connectez vous !</title>
-        <base href="<?= $web_root ?>"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/style1.css">
-        <script src="/lib/jquery-2.2.0.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/panier.js"></script>
-        <script>
-            $(function(){
-                $("input:text:first").focus();
-            });
-        </script>
-    </head>
+    <?php require_once("view/blocks/head.html"); ?>
     <body>
         <div>
-            <?php require_once("view_navbar.html"); ?>
+            <?php require_once("view/blocks/view_navbar.html"); ?>
             <script>
                 function myFunction() {
                     document.getElementsByClassName("menu")[0].classList.toggle("responsive");

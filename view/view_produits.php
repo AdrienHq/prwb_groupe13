@@ -14,7 +14,7 @@
     <body>
         
         
-        <?php require_once"view_navbar.html"; ?>
+        <?php require_once "view_navbar.html"; ?>
         
         <?= 
             '<table id="datatable" border="1" width="10">
