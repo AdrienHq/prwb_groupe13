@@ -8,7 +8,6 @@
         url(../img/jumbo.jpg) center center / cover no-repeat;
 }
 .baseline-welcome {
-    font-family: 'Pinyon Script', serif;
     color: white;
     font-size: 2.2rem;
     display: block;
