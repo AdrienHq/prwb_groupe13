@@ -45,4 +45,9 @@
             </div>
         </section>
     </body>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <?php require_once("view/blocks/view_footer.html"); ?>
+        </div>
+    </footer>
 </html>
