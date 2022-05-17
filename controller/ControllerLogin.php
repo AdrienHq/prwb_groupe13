@@ -17,6 +17,17 @@ class ControllerLogin extends Controller {
             $this->redirect("login", "login");
         }
     }
+
+    public function profile () {
+        if ($this->user_logged()) {
+            $user = Utilisateur::select_user($_SESSION['user']);
+            $user->password = "********";
+            var_dump($user->pseudo);
+            (new View("profile"))->show(array("user"=>$user));
+        } else {
+            $this->redirect("index", "login");
+        }
+    }
     
     public function login() {
         $pseudo = '';
