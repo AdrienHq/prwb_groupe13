@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php require_once("view/blocks/head.html"); ?>
     <head>
         <meta charset="UTF-8">
         <base href="<?= $web_root ?>"/>
@@ -145,70 +146,78 @@
         </script>
     </head>
     <body>
-        
-        <?php require_once("view_navbar.html"); ?> 
-        
-        <div class="main">
-            Veuillez remplir le formulaire pour vous enregistrer.
-            <br><br>
-            <form id="signupForm" action="view_signup.php" method="post" >
-                <table>
-                     <tr>
-                        <td>Nom:</td>
-                        <td><input id="nom" name="nom" type="text" size="16" value=""></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                    <tr>
-                        <td>Prenom:</td>
-                        <td><input id="prenom" name="prenom" type="text" size="16" value=""></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                    <tr>
-                        <td>Date de naissance:</td>
-                        <td><input id="ddnJour" name="jour" type="number" size="2" value="">
-                        <input id="ddnMois" name="mois" type="number" size="2" value="">
-                        <input id="ddnAnnee" name="annee" type="text" size="4" value=""></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                    <tr>
-                        <td>Pseudo:</td>
-                        <td><input id="pseudo" name="pseudo" type="text" size="16" value="" onchange=''></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Mot de passe:</td>
-                        <td><input id="password" name="password" type="password" size="16" value="" ></td>
-                        <td class="errors" id="errPassword"></td>
-                    </tr>
-                    <tr>
-                        <td>Confirmation du mot de passe:</td>
-                        <td><input id="passwordConfirm" name="password_confirm" size="16" type="password" value="" ></td>
-                        <td class="errors" id="errPasswordConfirm"></td>
-                    </tr>
-                    <tr>
-                        <td>Mail:</td>
-                        <td><input id="mail" name="mail" type="text" size="16" value=""></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                    <tr>
-                        <td>Numéro de téléphone:</td>
-                        <td><input id="tel" name="tel" type="text" size="16" value=""></td>
-                        <td class="errors" id="errPseudo"></td>
-                    </tr>
-                </table>
-                <input id="btn" type="submit" value="Sign Up">
-            </form>
-            <?php if(count($errors)!=0): ?>
-                <div class='errors'>
-                    <br><br><p>Veuillez corriger les erreurs suivantes:</p>
-                    <ul>
-                    <?php foreach($errors as $error): ?>
-                        <li><?= $error ?></li>
-                    <?php endforeach; ?>
-                    </ul>
+        <?php require_once("view/blocks/view_navbar.html"); ?>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <h1 style="margin-top: 20px; margin-bottom: 50px">Please fill up this form to sign up</h1>
+                    <br><br>
+                    <form id="signupForm" action="view_signup.php" method="post" >
+                        <table>
+                            <tr>
+                                <td>Nom:</td>
+                                <td><input id="nom" name="nom" type="text" size="16" value=""></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+                            <tr>
+                                <td>Prenom:</td>
+                                <td><input id="prenom" name="prenom" type="text" size="16" value=""></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+                            <tr>
+                                <td>Date de naissance:</td>
+                                <td><input id="ddnJour" name="jour" type="number" size="2" value="">
+                                    <input id="ddnMois" name="mois" type="number" size="2" value="">
+                                    <input id="ddnAnnee" name="annee" type="text" size="4" value=""></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo:</td>
+                                <td><input id="pseudo" name="pseudo" type="text" size="16" value="" onchange=''></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Mot de passe:</td>
+                                <td><input id="password" name="password" type="password" size="16" value="" ></td>
+                                <td class="errors" id="errPassword"></td>
+                            </tr>
+                            <tr>
+                                <td>Confirmation du mot de passe:</td>
+                                <td><input id="passwordConfirm" name="password_confirm" size="16" type="password" value="" ></td>
+                                <td class="errors" id="errPasswordConfirm"></td>
+                            </tr>
+                            <tr>
+                                <td>Mail:</td>
+                                <td><input id="mail" name="mail" type="text" size="16" value=""></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+                            <tr>
+                                <td>Numéro de téléphone:</td>
+                                <td><input id="tel" name="tel" type="text" size="16" value=""></td>
+                                <td class="errors" id="errPseudo"></td>
+                            </tr>
+                        </table>
+                        <input id="btn" type="submit" value="Sign Up">
+                    </form>
+                    <?php if(count($errors)!=0): ?>
+                        <div class='errors'>
+                            <br><br><p>Veuillez corriger les erreurs suivantes:</p>
+                            <ul>
+                                <?php foreach($errors as $error): ?>
+                                    <li><?= $error ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
-            <?php endif; ?>
-        </div>
+            </div>
+        </section>
     </body>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <?php require_once("view/blocks/view_footer.html"); ?>
+        </div>
+    </footer>
 </html>
