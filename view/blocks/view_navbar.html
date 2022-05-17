@@ -24,7 +24,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <?php if (isset($_SESSION['user']) && Utilisateur::is_admin($_SESSION['user'])) { echo '<li><a href="admin/index" class="nav-link navbar-right">Admin</a></li>' ; }?>
-            <?php if (isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/index" class="nav-link">Profil</a></li>' ; }?>
+            <?php if (isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/profile" class="nav-link">Profil</a></li>' ; }?>
             <?php if (!isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/login" class="nav-link">Se connecter</a></li>' ; }?>
             <?php if (!isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/signup" class="nav-link">Enregistrement</a></li>' ; }?>
             <?php if (isset($_SESSION['user'])) { echo '<li class="nav-item"><a href="login/logout" class="nav-link">Déconnexion</a></li>' ; }?>
