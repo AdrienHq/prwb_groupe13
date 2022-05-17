@@ -17,7 +17,6 @@
     </head>
     <body>
         <?php require_once("view/blocks/view_navbar.html"); ?>
-        
         <?php
             echo '
             <table id="datatable" border="1" width="10">
@@ -61,6 +60,10 @@
                     $("#datatable").DataTable();
             });
         </script>
-
     </body>
+<footer class="footer" id="footer">
+    <div class="container">
+        <?php require_once("view/blocks/view_footer.html"); ?>
+    </div>
+</footer>
 </html>

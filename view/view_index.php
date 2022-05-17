@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("view/blocks/head.html"); ?>
+    <head>
+        <script type="text/javascript" src="lib/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/panier.js"></script>
+    </head>
     <script>
         var myModal = document.getElementById('myModal')
         var myInput = document.getElementById('myInput')
