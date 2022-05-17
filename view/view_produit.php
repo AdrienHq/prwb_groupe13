@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <?php require_once("view/blocks/head.html"); ?>
     <head>
         <meta charset="UTF-8">
         <title>Categorie TEST</title>
@@ -13,8 +14,8 @@
         <link rel="stylesheet" type="text/css" href="lib/unslider/unslider-dots.css">
     </head>
     <body>
-        <?php require_once("view_navbar.html"); ?>
-       
+        <?php require_once("view/blocks/view_navbar.html"); ?>
+
         <h2>Produit : <?= $produit->label ?></h2>
 
             <div class="banner">

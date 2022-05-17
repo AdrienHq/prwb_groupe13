@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require_once("view/blocks/head.html"); ?>
     <head>
         <meta charset="UTF-8">
         <title>Categorie TEST</title>
@@ -15,8 +16,7 @@
         <script type="text/javascript" src="lib/datatables/datatables.min.js"></script>
     </head>
     <body>
-        
-        <?php require_once 'view_navbar.html'; ?>
+        <?php require_once("view/blocks/view_navbar.html"); ?>
         
         <?php
             echo '
