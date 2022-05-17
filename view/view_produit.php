@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("view/blocks/head.html"); ?>
+    <head>
+        <script type="text/javascript" src="lib/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/panier.js"></script>
+    </head>
     <body>
         <?php require_once("view/blocks/view_navbar.html"); ?>
         <h2 style="margin-top:60px; text-align: center"><?= $produit->label ?> </h2>
